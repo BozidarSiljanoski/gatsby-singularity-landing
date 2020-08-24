@@ -9,23 +9,23 @@ import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
+import Helmet from 'react-helmet';
 import Header from "./header"
 import "./layout.css"
+import useSiteMetadata from "../hooks/UseSiteMetadata"
 
 const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
+ const { title, description } = useSiteMetadata();
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata.title} />
+      <Helmet >
+        <html lang="en" />
+        <title>{title}</title>
+        <meta name="description" content={description} />
+
+      </Helmet>
+      <Header siteTitle={title} />
       <div
         style={{
           margin: `0 auto`,

@@ -200,7 +200,9 @@ html {
 }
 body {
   color: hsla(0, 0%, 0%, 0.8);
-  font-family: georgia, serif;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+  Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  text-rendering: optimizeLegibility;
   font-weight: normal;
   word-wrap: break-word;
   font-kerning: normal;
@@ -594,9 +596,7 @@ code {
   border-radius: 3px;
   font-family: "SFMono-Regular", Consolas, "Roboto Mono", "Droid Sans Mono",
     "Liberation Mono", Menlo, Courier, monospace;
-  padding: 0;
-  padding-top: 0.2em;
-  padding-bottom: 0.2em;
+  padding: 2.2em 0;
 }
 pre code {
   background: none;
@@ -615,6 +615,12 @@ pre tt:before,
 pre tt:after {
   content: "";
 }
+
+a.current-page {
+  color: #ededed;
+  border-bottom: 2px solid white;
+}
+
 @media only screen and (max-width: 480px) {
   html {
     font-size: 100%;
